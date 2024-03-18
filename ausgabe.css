@@ -1,0 +1,70 @@
+body {
+    font-family: cursive;
+    background-color: #f7f7f7;
+}
+
+.ausgabe {
+    max-width: 100%;
+    margin: 50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 40px;
+    padding: 20px;
+}
+
+
+.ausgabelogo {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+}
+
+.ausgabelogo img {
+    width: 100%; /* Make the image responsive */
+    max-width: 250px; /* Optional: Limit the maximum width of the image */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+   }
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Responsive Stile für kleinere Bildschirme */
+@media screen and (max-width: 800px) {
+    .ausgabe {
+        padding: 10px;
+    }
+
+    h1{
+        font-size: 18px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+

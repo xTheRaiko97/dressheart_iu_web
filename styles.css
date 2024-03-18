@@ -1,0 +1,117 @@
+body {
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    max-height: 500px;
+    background-color: darksalmon;
+    border-top: 10px solid white;
+}
+
+.logo li {
+    display: grid;
+    align-content: space-evenly;
+    background-color: darksalmon;
+    justify-items: center;
+    padding: 5px;
+}
+
+.logo h1 {
+    display: flex;
+    font-size: 40px;
+    color: black;
+    font-family: cursive;
+}
+
+.logo h2 {
+    display: flex;
+    font-size: 55px;
+    color: red;
+    font-family: cursive;
+}
+
+.logo p {
+    font-size: 35px;
+    color: black;
+    font-family: cursive;
+    }
+
+.boxslogan a {
+    color: black;
+    font-family: cursive;
+    font-size: 40px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.boxslogan a:hover {
+    color: red;
+}
+
+.imp {
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.imp h1, .imp h2, .imp h3, .imp p {
+    font-family: cursive;
+}
+
+.imp h1, .imp h2 {
+    font-size: 30px;
+    color: black;
+}
+
+.imp h3 {
+    font-size: 20px;
+    color: black;
+    display: flex;
+    font-weight: lighter;
+}
+
+.imp p {
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+@media all and (max-width: 1700px) {
+    .logo {
+        margin-top: 50px;
+        flex-flow: column wrap;
+        padding: 20px;
+        background-color: white;
+    }
+
+    .logo li {
+        border: 1px groove black;
+    }
+
+    .logo img,
+    .logo li p,
+    .logo li a {
+        display: none;
+    }
+
+    .logo li h1,
+    .logo li h2 {
+        font-size: 20px;
+        color: black;
+        align-items: center;
+        padding: 10px;
+        background-color: darksalmon;
+    }
+
+    .spende,
+    .spende a {
+        display: none;
+    }
+}

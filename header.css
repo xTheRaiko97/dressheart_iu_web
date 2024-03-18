@@ -1,0 +1,236 @@
+/* Large */
+.headersmall, .slogan, .homebild {
+    display: none;
+}
+
+.headersmall a, .headersmall img{
+    display: none;
+}
+
+.smallnav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:flex-end;
+    list-style: none;
+    max-height: 65px;
+    padding: 10px;
+
+}
+.smallnav li, .navigation li {
+    display: flex;
+ 
+}
+.smallnav a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    font-family: cursive;
+}
+.smallnav a:hover {
+    color: red;
+}
+.spenden{
+   background-color: lightcoral;
+   border-top-left-radius: 6px;
+   border-bottom-left-radius: 6px;
+   align-items: center;
+   margin-right: 2px;
+}
+.shop{
+    background-color: lightsalmon;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    align-items: center;
+    margin-right: 2px;
+ }
+.fördern{
+    background-color: skyblue;
+    align-items: center;
+    margin-right: 2px;
+}
+.write {
+    font-size: 40px;
+    color: lightgray;
+    font-weight: bold;
+    align-items: center;
+    margin-right: 125px;
+    font-family: cursive;
+ }
+
+.navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+    background-color: darksalmon;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.navigation img {
+    max-width: 200px;
+    max-height: 200px;
+
+}
+.navigation a:hover {
+    color: red;
+
+}
+
+.nav-dressheart, .nav-hilfe, .nav-spenden{
+    align-items: center;
+ }
+
+ /*Middlescreens*/
+    
+@media all and (max-width: 1700px){
+
+.headersmall{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:space-evenly;
+    list-style: none;
+}
+
+.headersmall a{
+    display: flex;
+}
+.headersmall img{
+    
+    display:flex;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.homebild{
+    display: flex;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.slogan{
+    display: flex;
+    font-size: 30px;
+    color: lightgray;
+    font-weight: bold;
+    align-items: center;
+    font-family: cursive;
+}
+
+.navigation {
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    max-height: 125px;
+}
+.navigation li {
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.navigation a{
+    padding: 10px;
+    font-size: 30px;
+}
+
+.navigation img, .smallnav {
+        display: none;
+}
+
+.nav-spenden{
+    background-color: lightcoral;
+}
+.nav-dressheart{
+    background-color: skyblue;
+}
+.nav-hilfe{
+    background-color: lightsalmon;
+}}
+
+@media all and (max-width: 800px){
+.headersmall{
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:space-evenly;
+    list-style: none;
+}
+
+.headersmall a{
+    max-width: 150px;
+    max-height: 150px;
+    display: flex;
+}
+.headersmall img{
+    
+    display: flex;
+}
+
+.homebild{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+    }
+
+.slogan{
+    display: flex;
+    font-size: 20px;
+    color: lightgray;
+    font-weight: bold;
+    align-items: center;
+    font-family: cursive;
+}
+
+.navigation {
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    max-height: 125px;
+}
+
+.navigation li {
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.navigation a{
+    padding: 10px;
+    font-size: 30px;
+}
+
+.navigation img, .smallnav {
+    display: none;
+}
+
+.nav-spenden{
+    background-color: lightcoral;
+}
+.nav-dressheart{
+    background-color: skyblue;
+}
+.nav-hilfe{
+    background-color: lightsalmon;
+}}

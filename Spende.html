@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Dressheart: Home </title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slides.css">
+    <link rel="stylesheet" href="forms.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<header>
+  <div class="headersmall">
+      <li class="homebild"><a href="Home.html"><img src="Dressheart-logos_transparent.png"/></a></li>
+      <li class="slogan">Dressheart: Teile Wärme, spende Herz!</li>
+  </div>
+  <div class="smallnav">
+      <li class="write">Dressheart: Teile Wärme, spende Herz!</li>
+      <li class="spenden"><a href="Spende.html">Spenden</a></li>
+      <li class="fördern"><a href="placeholder.html">Werde Fördermitglied</a></li>
+      <li class="shop"><a href="placeholder.html">Shop</a></li>
+  </div>
+  <div class="navigation">
+      <li class="nav"><a href="Home.html"><img src="Dressheart-logos_transparent.png"/></a></li>
+      <li class="nav-spenden"><a href="Spende.html">Spenden & Helfen</a></li>
+      <li class="nav-hilfe"><a href="placeholder.html">Wo wird Hilfe benötigt?</a></li>
+      <li class="nav-dressheart"><a href="Impressum.html">Dressheart</a></li>
+  </div>
+</header>
+<body>
+
+<script type="text/javascript">
+
+function toggleAdresseInput() {
+    var abgabeortSelect = document.getElementById("abgabeort");
+    var adresseRow = document.getElementById("adresseRow");
+    var adresseRow1 = document.getElementById("adresseRow1");
+    var adresseRow2 = document.getElementById("adresseRow2");
+    var submitButton = document.getElementById("submit");
+    
+    if (abgabeortSelect.value === "Abholung am Wunschort") {
+        adresseRow.style.display = "block";
+        adresseRow1.style.display = "block";
+        adresseRow2.style.display = "block";
+
+        submitButton.disabled = true; // Disable submit by default
+    } else {
+        adresseRow.style.display = "none";
+        adresseRow1.style.display = "none";
+        adresseRow2.style.display = "none";
+        
+        submitButton.disabled = false; // Enable submit if "Abholung" is not selected
+    }
+}
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var postalCodeInput = document.getElementById("plz");
+    var submitButton = document.getElementById("submit");
+
+    postalCodeInput.addEventListener("input", function() {
+        validatePostalCode();
+    });
+
+    function validatePostalCode() {
+        var postalCode = postalCodeInput.value;
+        var firstTwoDigits = postalCode.substring(0, 2);
+
+        if (postalCode.length === 5 && firstTwoDigits === "39") {
+            document.getElementById("postalCodeError").textContent = "";
+            submitButton.disabled = false; // Enable submit if conditions are met
+        } else {
+            document.getElementById("postalCodeError").textContent = "Abholung sind nur aus 39... möglich.";
+            submitButton.disabled = true; // Disable submit if conditions are not met
+        }
+    }
+  });
+
+  function sichern () {
+    storage.set("Vorname", document.forms.formular.elements.fname.value);
+    storage.set("Nachname", document.forms.formular.elements.lname.value);
+    storage.set("Strasse", document.forms.formular.elements.adresse.value);
+    storage.set("Postleitzahl", document.forms.formular.elements.plz.value);
+    storage.set("Ort", document.forms.formular.elements.ort.value);
+    storage.set("Abgabeort", document.forms.formular.elements.abgabeort.value);
+    storage.set("Spendenziel", document.forms.formular.elements.ziel.value);
+    storage.set("Kleidungart", document.forms.formular.elements.art.value);
+    storage.set("Mitteilung", document.forms.formular.elements.subject.value);
+   
+    document.forms.formular.reset();
+
+    location.href = "formausgabe.html";
+  }
+  </script>
+  <script type="text/javascript" src="form.js"></script>
+
+  <div class="row1">
+      <h1>Teile Wärme, spende Kleidung!</h1>
+      <form name="formular" action="" onsubmit="sichern(); return false;">
+        <div class="row">    
+          <div class="col-25">
+              <label for="fname">Vorname</label>
+          </div>
+          <div class="col-75">
+              <input name="fname" type="text" id="fname" placeholder="Dein Vorname..">
+          </div>
+        </div>
+      <div class="row">
+          <div class="col-25">
+              <label for="lname">Nachname</label>
+          </div>
+          <div class="col-75">
+              <input type="text" id="lname" name="lname" placeholder="Dein Nachname..">
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+              <label for="abgabeort">Abgabewunsch</label>
+          </div>
+          <div class="col-75">
+              <select id="abgabeort" name="abgabeort" onchange="toggleAdresseInput()">
+                  <option value="Abgabe in Geschäftsstelle" id="abgabe">Abgabe in Geschäftsstelle</option>
+                  <option value="Abholung am Wunschort" id="abholen">Abholung beauftragen</option>
+              </select>
+          </div>
+      </div>
+      <div class="row" id="adresseRow" style="display: none;">
+          <div class="col-25">
+              <label for="adresse">Strasse</label >
+          </div>
+          <div class="col-75">
+              <input type="text" id="adresse" name="adresse" placeholder="Deine Adresse..">
+          </div>
+      </div>
+      <div class="row" id="adresseRow1" style="display: none;">
+          <div class="col-25">
+              <label for="plz">Postleitzahl</label>
+          </div>
+          <div class="col-75">
+              <input type="text" id="plz" name="plz" placeholder="Deine Postleitzahl..">
+              <span id="postalCodeError" style="color: white;"></span><br>
+          </div>
+      </div>
+      <div class="row" id="adresseRow2" style="display: none;">
+          <div class="col-25">
+              <label for="ort">Ort</label>
+          </div>
+          <div class="col-75">
+              <input type="text" id="ort" name="ort" placeholder="Ort..">
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+              <label for="ziel">Spendenziel</label>
+          </div>
+          <div class="col-75">
+              <select id="ziel" name="ziel">
+                  <option value="Ahrtal" id="Ahrtal">Ahrtal</option>
+                  <option value="Ukraine" id="Ukraine">Ukraine</option>
+              </select>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+              <label for="art">Kleidungsart</label>
+          </div>
+          <div class="col-75">
+              <select id="art" name="art">
+                  <option value="Winterkleidung" id="Winterkleidung">Winterkleidung</option>
+                  <option value="Sommerkleidung" id="Sommerkleidung">Sommerkleidung</option>
+                  <option value="Schuhe" id="Schuhe">Schuhe</option>
+              </select>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+              <label for="subject">Deine Mitteilung</label>
+          </div>
+          <div class="col-75">
+              <textarea id="subject" name="subject" placeholder="Deine Mitteilung an uns.." style="height:200px"></textarea>
+          </div>
+      </div>
+      <br>
+      <div class="row">
+          <input type="submit" value="Spende jetzt" id="submit">
+      </div>
+      </form>
+  </div>
+</body>
+
+<footer>
+  <div class="footer">
+      <li class="agb"><a href="placeholder.html">AGB</a></li>
+      <li class="impressum"><a href="placeholder.html">Datenschutz</a></li>
+      <li class="datenschutz"><a href="Impressum.html">Impressum</a></li>
+  </div>
+</footer>
+
+   
+    

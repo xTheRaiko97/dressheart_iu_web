@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: darksalmon;
+}
+
+.row1 {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  background-color: darksalmon;
+  margin-top: 50px;
+}
+
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-bottom: 10px;
+
+}
+
+.row1 h1 {
+  font-size: 30px;
+  font-family: cursive;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-weight: bold;
+  font-family: cursive;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  background-color: white;
+  color: darksalmon;
+  padding: 12px 20px;
+  border: solid darksalmon;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+input[type=submit]:hover {
+  background-color: white;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+@media screen and (max-width: 1700px) {
+
+  .col-25,
+  .col-75,
+  input[type=submit] {
+    width: 100%;
+  }
+
+  .row1 {
+    margin-top: 100px;
+  }
+
+
+}
+
+@media screen and (max-width: 800px) {
+  .row1 h1 {
+    font-size: 20px;
+  }
+}

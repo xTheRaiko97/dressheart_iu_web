@@ -1,0 +1,50 @@
+/* Large */
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    list-style: none;
+    max-height: 65px;
+    padding: 10px;
+}
+.footer li {
+    display: flex;
+}
+.footer a {
+    color: black;
+    font-size: 20px;
+    padding: 15px;
+    font-family: cursive;
+}
+.footer a:hover {
+    color: red;
+}
+.agb, .impressum, .datenschutz {
+    margin-right: 2px;
+    align-items: center;
+}
+.border {
+    border-top: 0.1px groove grey;
+    margin-top: 20px;
+}
+
+/* Small screens */
+@media all and (max-width: 800px){
+   
+.footer {
+    flex-flow: column wrap;
+    padding: 10px;
+}
+.footer li {
+    justify-content: center;
+}
+.footer a{
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    border-top: 1px bold black;
+}
+
+.border{
+    display: none;
+}}

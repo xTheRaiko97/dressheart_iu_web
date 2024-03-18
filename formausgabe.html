@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Dressheart: Home </title>
+    <link rel="stylesheet" href="ausgabe.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="form.js"></script>
+    <script>
+    var liste = storage.getAll();
+    </script>
+</head>
+
+<header>
+    <li class="ausgabelogo"><img src="Dressheart-logos_transparent.png"></li>
+</header>
+
+<body>
+    <div class="ausgabe">
+        <h1>Du bist nun ein richtiges Dressheart!</h1>
+
+      <table class="table">
+        <script type="text/javascript">
+          for (var eigenschaft in liste) {
+          document.write(
+            "<tr><td>" + eigenschaft + "</td>" +
+            "<td><code>" + liste[eigenschaft] + "</code></td></tr>"
+          );
+        }
+        </script>  
+       </table>
+    </div>
+    <script>
+        // Funktion zum Schließen der Seite und Weiterleitung nach 10 Sekunden
+        setTimeout(function() {
+            window.location.href = "Home.html";
+        }, 10000); // 10 Sekunden in Millisekunden umgerechnet
+
+    </script>
+</body>
