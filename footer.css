@@ -1,50 +1,63 @@
-/* Large */
+/* Big Screens */
 .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    list-style: none;
+    display: flex; /* nebeneinander anordnen mit Flexbox*/
+    flex-direction: row; /* In Reihe */
+    justify-content:flex-end; /* rechten Rand ausrichten */
+    list-style: none; /* Listenstil entfernen */
     max-height: 65px;
     padding: 10px;
 }
+
 .footer li {
     display: flex;
 }
+
+/* für Links */
 .footer a {
     color: black;
     font-size: 20px;
     padding: 15px;
     font-family: cursive;
 }
+
+/* Hover-Stil */
 .footer a:hover {
     color: red;
 }
+
+/* Elemente anordnen + Abstand */
 .agb, .impressum, .datenschutz {
     margin-right: 2px;
     align-items: center;
 }
+
+/* Trennlinie */
 .border {
-    border-top: 0.1px groove grey;
+    border-top: 0.1px groove grey; /* Obere Trennlinie */
     margin-top: 20px;
 }
 
-/* Small screens */
+/* SmallScreens */
 @media all and (max-width: 800px){
-   
-.footer {
-    flex-flow: column wrap;
-    padding: 10px;
-}
-.footer li {
-    justify-content: center;
-}
-.footer a{
-    text-align: center;
-    padding: 10px;
-    font-size: 20px;
-    border-top: 1px bold black;
-}
+    
+    .footer {
+        flex-flow: column wrap; /* In einer Spalte, bei Bedarf Umbruch möglich */
+        padding: 10px;
+    }
 
-.border{
-    display: none;
-}}
+    .footer li {
+        justify-content: center; /* zentrieren */
+    }
+
+    /* Links */
+    .footer a{
+        text-align: center; /* Text zentrieren */
+        padding: 10px;
+        font-size: 20px;
+        border-top: 1px bold black; /* Obere Trennlinie */
+    }
+    
+    .border{
+        display: none; /* Trennlinie ausblenden */
+    }
+}

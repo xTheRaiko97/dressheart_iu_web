@@ -2,20 +2,23 @@
   box-sizing: border-box;
 }
 
+/* Stil für Zeilen*/
 .row {
   padding-left: 30px;
   padding-right: 30px;
   background-color: darksalmon;
 }
 
+/* spezielle Zeile */
 .row1 {
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 5px;
   background-color: darksalmon;
-  margin-top: 50px;
+  margin-top: 50px; /* Setze einen oberen Abstand für diese Zeile */
 }
 
+/* Stil Eingabefelder */
 input[type=text],
 select,
 textarea {
@@ -25,9 +28,9 @@ textarea {
   border-radius: 4px;
   resize: vertical;
   margin-bottom: 10px;
-
 }
 
+/* Stil Überschrift von row1 */
 .row1 h1 {
   font-size: 30px;
   font-family: cursive;
@@ -35,7 +38,7 @@ textarea {
   margin-top: 20px;
 }
 
-
+/* Stil Label */
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
@@ -44,6 +47,7 @@ label {
   font-size: 20px;
 }
 
+/* Stil Submit-Button */
 input[type=submit] {
   background-color: white;
   color: darksalmon;
@@ -59,6 +63,7 @@ input[type=submit] {
   font-weight: bold;
 }
 
+/* Hover-Effekt für Submit */
 input[type=submit]:hover {
   background-color: white;
 }
@@ -69,25 +74,28 @@ input[type=submit]:hover {
   padding: 20px;
 }
 
+/* Stil 25%-Spalten */
 .col-25 {
   float: left;
   width: 25%;
   margin-top: 6px;
 }
 
+/* Stil 75%-Spalten */
 .col-75 {
   float: left;
   width: 75%;
   margin-top: 6px;
 }
 
-/* Clear floats after the columns */
+/* Klasse: Floats löschen */
 .row::after {
   content: "";
   display: table;
   clear: both;
 }
 
+/* Checkbox */
 .check {
   position: absolute;
   top: 0;
@@ -97,21 +105,22 @@ input[type=submit]:hover {
   background-color: #eee;
 }
 
+/* MiddleScreens */
 @media screen and (max-width: 1700px) {
-
+  /*  auf 100% Breite ändern */
   .col-25,
   .col-75,
   input[type=submit] {
     width: 100%;
   }
-
+  
+  /* oberen Abstand für row1 */
   .row1 {
     margin-top: 100px;
   }
-
-
 }
 
+/* SmallScreens */
 @media screen and (max-width: 800px) {
   .row1 h1 {
     font-size: 20px;

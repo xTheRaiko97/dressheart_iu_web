@@ -1,82 +1,94 @@
-*{
+/* Box-Modell für alle Elemente auf border-box */
+* {
     box-sizing: border-box;
 }
 
+/* Container Diashow */
 .slideshow-container {
     position: relative;
-    max-width: 1000px;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    font-family: cursive;
+    max-width: 1000px; /* maximale Breite */
+    margin: auto; /* Zentriere horizontal */
+    justify-content: center; /* Zentriere horizontal */
+    align-items: center; /* Zentriere vertikal */
+    font-family: cursive; /* kursive Schriftart */
 }
 
+/* Design Klasse ueberschrift */
 .ueberschrift {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    display: flex; /* Zeige als Flex-Element */
+    justify-content: center; /* Zentriere horizontal */
+    margin-bottom: 20px; /* Abstand nach unten */
 }
 
+/* Stil für text */
 .ueberschrift h1 {
-    color: black;
-    font-size: 40px;
-    padding: 8px 12px;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
+    color: black; /* Schriftfarbe */
+    font-size: 40px; /* Schriftgröße */
+    padding: 8px 12px; /* Innenabstand */
+    bottom: 8px; /* Abstand von unten */
+    width: 100%; /* volle Breite */
+    text-align: center; /* Zentriere Text */
     font-family: cursive;
 }
 
+/* Stil Slides */
 .Slides {
-    display: none;
-    position: flex;
+    display: none; /* Verstecke standardmäßig */
+    position: flex; /* Positioniere als Flex-Element */
 }
 
+/* Stil bext,prev Pfeile */
 .prev, .next {
     cursor: pointer;
-    position: absolute;
-    top: 50%;
+    position: absolute; /* Positioniere absolut */
+    top: 50%; /* Position von oben */
     width: auto;
-    margin-top: -22px;
+    margin-top: -22px; /* Negative Margin --> vertikal zentrieren */
     padding: 16px;
     color: white;
-    font-weight: bold;
+    font-weight: bold; /* Fette Schrift */
     font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+    transition: 0.6s ease; /* Effekt Übergang */
+    border-radius: 0 3px 3px 0; /* Ecken runder */
+    user-select: none; /* Ausschalten der Auswahl mit der Maus */
 }
 
+/* Stil next */
 .next {
-    right: 0;
+    right: 0; /* Position von rechts */
     border-radius: 3px 0 0 3px;
 }
 
+/* Effekt beim Hovern*/
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* switch der Hintergrundfarbe */
 }
 
+/* Stil für Dots */
 .dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
     margin: 0 2px;
     background-color: #bbb;
-    border-radius: 50%;
+    border-radius: 50%; /* Kreisförmiger Rand */
     display: inline-block;
     transition: background-color 0.6s ease;
 }
 
+/* Effekt beim Hovern */
 .active, .dot:hover {
     background-color: #717171;
 }
 
+/* Fade-Effekt für Slides */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
 }
 
+/* Keyframe-Definition*/
 @keyframes fade {
-    from { opacity: .4; }
-    to { opacity: .6; }
+    from { opacity: .4; } /* Startwert Transparenz */
+    to { opacity: .6; } /* Endwert Transparenz */
 }

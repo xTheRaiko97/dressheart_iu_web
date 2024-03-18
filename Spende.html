@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <title>Dressheart: Home </title>
+<head> <!-- Titel und benötigte Meta und CSS, JS-Dateien -->
+    <title>Dressheart: Deine Spende </title>
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="styles.css">
@@ -11,28 +11,31 @@
 
 </head>
 
-<header>
-  <div class="headersmall">
-      <li class="homebild"><a href="Home.html"><img src="Dressheart-logos_transparent.png"/></a></li>
-      <li class="slogan">Dressheart: Teile Wärme, spende Herz!</li>
-  </div>
-  <div class="smallnav">
-      <li class="write">Dressheart: Teile Wärme, spende Herz!</li>
-      <li class="spenden"><a href="Spende.html">Spenden</a></li>
-      <li class="fördern"><a href="placeholder.html">Werde Fördermitglied</a></li>
-      <li class="shop"><a href="placeholder.html">Shop</a></li>
-  </div>
-  <div class="navigation">
-      <li class="nav"><a href="Home.html"><img src="Dressheart-logos_transparent.png"/></a></li>
-      <li class="nav-spenden"><a href="Spende.html">Spenden & Helfen</a></li>
-      <li class="nav-hilfe"><a href="placeholder.html">Wo wird Hilfe benötigt?</a></li>
-      <li class="nav-dressheart"><a href="Impressum.html">Dressheart</a></li>
-  </div>
+<header>  <!--Hier wird das Navigationgrundgerüst in den verschiedenen Bildschirmgrößen ermöglicht-->
+    <!--Slogan + Bild ohne class smallnav auf kleineren Bildschirmgrößen-->
+    <div class="headersmall">
+        <li class="homebild"><a href="Home.html"><img src="Dressheart-logos_transparent.png"/></a></li>
+        <li class="slogan">Dressheart: Teile Wärme, spende Herz!</li>
+    </div>
+    <!-- Obere rechte Auswahlliste inkl. Verlinkung Spendenformular -->
+    <div class="smallnav">
+        <li class="write">Dressheart: Teile Wärme, spende Herz!</li>
+        <li class="spenden"><a href="Spende.html">Spenden</a></li>
+        <li class="fördern"><a href="placeholder.html">Werde Fördermitglied</a></li>
+        <li class="shop"><a href="placeholder.html">Shop</a></li>
+    </div>
+    <!-- Hauptnavigation -->
+    <div class="navigation">
+        <li class="nav"><a href="Home.html"><img src="Dressheart-logos_transparent.png"/></a></li>
+        <li class="nav-spenden"><a href="Spende.html">Spenden & Helfen</a></li>
+        <li class="nav-hilfe"><a href="placeholder.html">Wo wird Hilfe benötigt?</a></li>
+        <li class="nav-dressheart"><a href="Impressum.html">Dressheart</a></li>
+    </div>
 </header>
 <body>
 
 <script type="text/javascript">
-
+//Funktion Umschaltung Adressfelder je nach Auswahl Abgabeort
 function toggleAdresseInput() {
     var abgabeortSelect = document.getElementById("abgabeort");
     var adresseRow = document.getElementById("adresseRow");
@@ -40,29 +43,29 @@ function toggleAdresseInput() {
     var adresseRow2 = document.getElementById("adresseRow2");
     var submitButton = document.getElementById("submit");
     
-    if (abgabeortSelect.value === "Abholung am Wunschort") {
+    if (abgabeortSelect.value === "Abholung am Wunschort") { //zeige Adressfelder an bei if=true
         adresseRow.style.display = "block";
         adresseRow1.style.display = "block";
-        adresseRow2.style.display = "block";
+        adresseRow2.style.display = "block"; 
 
-        submitButton.disabled = true; // Disable submit by default
-    } else {
+        submitButton.disabled = true; // Deaktiviere submit by default
+    } else { //verstecke Adressfelder
         adresseRow.style.display = "none";
         adresseRow1.style.display = "none";
         adresseRow2.style.display = "none";
         
-        submitButton.disabled = false; // Enable submit if "Abholung" is not selected
+        submitButton.disabled = false; // Aktiviere submit wenn "Abholung" nicht ausgewählt
     }
 }
-
-  document.addEventListener("DOMContentLoaded", function() {
+   //Validierung der Postleitzahl während des Ladens der Seite
+  document.addEventListener("DOMContentLoaded", function() { 
     var postalCodeInput = document.getElementById("plz");
     var submitButton = document.getElementById("submit");
 
     postalCodeInput.addEventListener("input", function() {
         validatePostalCode();
     });
-
+    // Funktion zur Valdierung
     function validatePostalCode() {
         var postalCode = postalCodeInput.value;
         var firstTwoDigits = postalCode.substring(0, 2);
@@ -76,7 +79,7 @@ function toggleAdresseInput() {
         }
     }
   });
-
+  //Funktion zum Speichern und weitergeben der Formulardaten zur Ausgabe
   function sichern () {
     storage.set("Vorname", document.forms.formular.elements.fname.value);
     storage.set("Nachname", document.forms.formular.elements.lname.value);
@@ -88,16 +91,16 @@ function toggleAdresseInput() {
     storage.set("Kleidungart", document.forms.formular.elements.art.value);
     storage.set("Mitteilung", document.forms.formular.elements.subject.value);
    
-    document.forms.formular.reset();
+    document.forms.formular.reset(); //Formular reset
 
-    location.href = "formausgabe.html";
+    location.href = "formausgabe.html"; //Weiterleitung
   }
   </script>
   <script type="text/javascript" src="form.js"></script>
 
-  <div class="row1">
+  <div class="row1">  <!-- Darstellung des Formulars, weitere Hinweise siehe CSS -->
       <h1>Teile Wärme, spende Kleidung!</h1>
-      <form name="formular" action="" onsubmit="sichern(); return false;">
+      <form name="formular" action="" onsubmit="sichern(); return false;">  <!-- Sicherung des Formulars durch aufrufen onsubmit inkl. der benötigten Funktion-->
         <div class="row">    
           <div class="col-25">
               <label for="fname">Vorname</label>
@@ -119,7 +122,7 @@ function toggleAdresseInput() {
               <label for="abgabeort">Abgabewunsch</label>
           </div>
           <div class="col-75">
-              <select id="abgabeort" name="abgabeort" onchange="toggleAdresseInput()">
+              <select id="abgabeort" name="abgabeort" onchange="toggleAdresseInput()"> <!-- Event zum Aufrufen Funktion und Darstellung der Adressfelder -->
                   <option value="Abgabe in Geschäftsstelle" id="abgabe">Abgabe in Geschäftsstelle</option>
                   <option value="Abholung am Wunschort" id="abholen">Abholung beauftragen</option>
               </select>
@@ -189,12 +192,12 @@ function toggleAdresseInput() {
   </div>
 </body>
 
-<footer>
-  <div class="footer">
-      <li class="agb"><a href="placeholder.html">AGB</a></li>
-      <li class="impressum"><a href="placeholder.html">Datenschutz</a></li>
-      <li class="datenschutz"><a href="Impressum.html">Impressum</a></li>
-  </div>
+<footer> <!-- Footer mit den Verlinkungen am Ende der Seite -->
+    <div class="footer">
+        <li class="agb"><a href="placeholder.html">AGB</a></li>
+        <li class="impressum"><a href="placeholder.html">Datenschutz</a></li>
+        <li class="datenschutz"><a href="Impressum.html">Impressum</a></li>
+    </div>
 </footer>
 
    

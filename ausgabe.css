@@ -1,34 +1,31 @@
 body {
-    font-family: cursive;
-    background-color: #f7f7f7;
+    font-family: cursive; /* einheitliche Schriftart */
+    background-color: #f7f7f7; /* Hintergrundfarbe */
 }
 
 .ausgabe {
     max-width: 100%;
-    margin: 50px;
+    margin: 40px;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 40px;
-    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schatten-Effekt*/
 }
 
-
 .ausgabelogo {
-    display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
+    display: flex; 
+    justify-content: center; /* horizontal zentrieren */
+    align-items: center; /*vertikal zentrieren */
 }
 
 .ausgabelogo img {
-    width: 100%; /* Make the image responsive */
-    max-width: 250px; /* Optional: Limit the maximum width of the image */
+    width: 100%; /* Responsivität des Bildes sicherstellen */
+    max-width: 250px;
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+    text-align: center; /* Überschrift zentrieren */
+    color: #333; 
     margin-bottom: 20px;
 }
 
@@ -36,30 +33,31 @@ h2 {
     margin-left: 20px;
 }
 
+/* Tabellenstil */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 20px;
+    width: 100%; /* Volle Breite */
+    border-collapse: collapse; /* Rand entfernen */
+    margin-top: 20px; /* Oberen Abstand setzen */
+    font-size: 20px; /* Schriftgröße */
 }
 
 th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-   }
-
-th {
-    background-color: #f2f2f2;
+    padding: 12px; 
+    text-align: left; /* Text linksbündig */
+    border-bottom: 1px solid #ddd; /* Untere Trennlinie */
 }
 
-/* Responsive Stile für kleinere Bildschirme */
+th {
+    background-color: #f2f2f2; /* Hintergrundfarbe */
+}
+
+/* Small-Screens */
 @media screen and (max-width: 800px) {
     .ausgabe {
         padding: 10px;
     }
 
-    h1{
+    h1 {
         font-size: 18px;
     }
 
@@ -67,4 +65,3 @@ th {
         font-size: 14px;
     }
 }
-

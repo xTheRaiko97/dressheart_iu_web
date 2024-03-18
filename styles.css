@@ -1,24 +1,29 @@
+/*Hintergrundfarbe auf Weiß */
 body {
     background-color: white;
 }
 
+/* Stil für Logo */
 .logo {
+    /* Logo zu flexiblen Container + zentriert horizontal */
     display: flex;
     justify-content: center;
-    list-style: none;
-    max-height: 500px;
+    list-style: none; /* Entfernt Listenpunkte */
+    max-height: 500px; 
     background-color: darksalmon;
-    border-top: 10px solid white;
+    border-top: 10px solid white; /* Obere Grenze des Logos */
 }
 
+/* Stil einzelnen Elemente */
 .logo li {
-    display: grid;
-    align-content: space-evenly;
-    background-color: darksalmon;
-    justify-items: center;
-    padding: 5px;
+    display: grid; /* Liste --> Rastercontainer */
+    align-content: space-evenly; /* Platzierung im Rastercontainer */
+    background-color: darksalmon; /* Hintergrundfarbe der Liste */
+    justify-items: center; /* Zentriert horizontal */
+    padding: 5px; /* Innenabstand Liste */
 }
 
+/* Stil Überschriften innerhalb klasse logo */
 .logo h1 {
     display: flex;
     font-size: 40px;
@@ -33,24 +38,28 @@ body {
     font-family: cursive;
 }
 
+/* Absätze */
 .logo p {
     font-size: 35px;
     color: black;
     font-family: cursive;
-    }
+}
 
+/* Links innerhalb klasse boxslogan */
 .boxslogan a {
     color: black;
     font-family: cursive;
     font-size: 40px;
-    text-decoration: none;
+    text-decoration: none; /* Entfernt Unterstreichungen */
     margin-left: 10px;
 }
 
+/* Stil beim Hovern */
 .boxslogan a:hover {
     color: red;
 }
 
+/* Nachfolgende verantwortlich für Gestaltung Klasse imp */
 .imp {
     display: flex;
     flex-flow: column;
@@ -83,7 +92,9 @@ body {
     margin-right: 30px;
 }
 
+/* Media Query für Bildschirme mit einer maximalen Breite von 1700px */
 @media all and (max-width: 1700px) {
+    /* Änderungen an Klasse Logo */
     .logo {
         margin-top: 50px;
         flex-flow: column wrap;
@@ -91,16 +102,19 @@ body {
         background-color: white;
     }
 
+    /* Änderungen Stil einzelner Elemente*/
     .logo li {
         border: 1px groove black;
     }
 
+    /* Versteckt Bilder, Absätze und Links */
     .logo img,
     .logo li p,
     .logo li a {
         display: none;
     }
 
+    /* Änderungen der Überschriften */
     .logo li h1,
     .logo li h2 {
         font-size: 20px;
@@ -110,6 +124,7 @@ body {
         background-color: darksalmon;
     }
 
+    /* Versteckt Spendenbereich */
     .spende,
     .spende a {
         display: none;
